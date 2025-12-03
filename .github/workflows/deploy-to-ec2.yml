@@ -18,7 +18,7 @@ jobs:
        run: echo ${{ secrets.EC2_HOST }}
    
      - name: Setup the Ec2 Instance
-       uses: applyboy/ scp-actions@v0.1.4
+       uses: appleboy/ scp-actions@v0.1.4
        with:
          host: ${{secrets.EC2_HOST}}
          username: ubuntu
