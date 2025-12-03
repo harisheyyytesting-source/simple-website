@@ -3,13 +3,13 @@ name: Depoying latest code to Ec2
 on: [push]
 
 jobs:
+  DeployingCode:
    runs-on: "ubuntu-latest"
    steps:
      - run: echo "Started to Deploy code in Ec2 Own Instance"
 
      - name: echo "Getting code from Local Repo to Actions Work Space"
        uses:  actions/checkout@v3 
-       run: echo "Succesfully Checked out"
 
       
 
