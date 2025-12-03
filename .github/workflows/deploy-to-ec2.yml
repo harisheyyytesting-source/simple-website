@@ -3,7 +3,7 @@ name: Depoying latest code to Ec2
 on: [push]
 
 jobs:
-  Deploy Code:
+  DeployCode:
     runs-on: "ubuntu-latest"
     steps:
      - run: echo "Started to Deploy code in Ec2 Own Instance"
@@ -15,8 +15,8 @@ jobs:
        run: echo "Succesfully Checked out"
 
      - name: Secret Logs
-       run: echo  ${{secrets.EC2_HOST}}
-     
+       run: echo ${{ secrets.EC2_HOST }}
+   
      - name: Setup the Ec2 Instance
        uses: applyboy/ scp-actions@v0.1.4
        with:
