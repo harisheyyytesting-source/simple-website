@@ -1,0 +1,14 @@
+name: Log Pushes
+
+on:
+  push:
+     branches:
+        - main
+
+jobs:
+  harish_pushing_logs:
+    runs-on: ubuntu-latest
+    steps:
+      -name: log the logs bro
+      run: |
+         echo "Logging the code Success"
