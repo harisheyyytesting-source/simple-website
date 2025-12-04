@@ -25,6 +25,17 @@ jobs:
          key: ${{secrets.EC2_SSH_KEY}}
          source: "."
          target: "/home/ubuntu/simple-website"
+     
+     -  name: Executing Commands in Ec2
+        uses: appleboy/ssh-action@master
+        with:
+           host: ${{secrets.EC2_HOST}}
+           username: ubuntu
+           key: ${{secrets.EC2_SSH_KEY}}
+           script: |
+             echo SuccessFully Running Commands Bro.
+      
+      
 
       
 
