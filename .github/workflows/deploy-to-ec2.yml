@@ -3,13 +3,43 @@ name: Depoying latest code to Ec2
 on: [push]
 
 jobs:
-   runs-on: "ubuntu-latest"
-   steps:
+  DeployCode:
+    runs-on: "ubuntu-latest"
+    steps:
      - run: echo "Started to Deploy code in Ec2 Own Instance"
 
      - name: echo "Getting code from Local Repo to Actions Work Space"
        uses:  actions/checkout@v3 
+    
+     - name: Got code
        run: echo "Succesfully Checked out"
+
+     # - name: Secret Logs SSH
+     #   run: echo ${{secrets.EC2_SSH_KEY}}
+   
+     - name: Setup the Ec2 Instance
+       uses: appleboy/scp-action@v0.1.4
+       with:
+         host: ${{secrets.EC2_HOST}}
+         username: ubuntu
+         key: ${{secrets.EC2_SSH_KEY}}
+         source: "."
+         target: "/home/ubuntu/simple-website"
+     
+     -  name: Executing Commands in Ec2
+        uses: appleboy/ssh-action@master
+        with:
+           host: ${{secrets.EC2_HOST}}
+           username: ubuntu
+           key: ${{secrets.EC2_SSH_KEY}}
+           script: |
+             echo SuccessFully Running Commands Bro.
+      
+      
+
+      
+
+       
 
       
 
