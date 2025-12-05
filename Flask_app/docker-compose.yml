@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./main_app
+    ports: 
+      - "9000:9000"
+    container_name: 'flask_aws_app'
+
+  
