@@ -6,5 +6,7 @@ services:
     ports: 
       - "9000:9000"
     container_name: 'flask_aws_app'
+    volumes: 
+     - "D:/sample-aws/simple-website/vol_mount:/app_code"
 
   

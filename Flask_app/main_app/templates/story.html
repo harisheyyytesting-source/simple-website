@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Story</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="STORY">STORY</h1>
+        <p>It all begins in Hawkins, a small town hiding dark secrets...</p>
+        <p>Strange disappearances, supernatural powers, and the shadowy Upside Down await.</p>
+        <p>Join Eleven, Steve, and Nancy on a journey through mystery and danger.</p>
+
+        <a href="{{ url_for('characters') }}" class="neon-btn">Meet Characters</a>
+        <a href="{{ url_for('portal') }}" class="neon-btn">Enter Portal</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

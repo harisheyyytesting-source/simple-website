@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="PORTAL">PORTAL</h1>
+        <p>Dare to step into the Upside Down?</p>
+        <a href="{{ url_for('home') }}" class="neon-btn">Home</a>
+        <a href="{{ url_for('story') }}" class="neon-btn">Story</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

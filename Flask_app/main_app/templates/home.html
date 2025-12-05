@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Hawkins</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <!-- HAWKINS INTRO SECTION -->
+    <div id="intro" class="section intro-bg">
+        <h1 class="title glitch" data-text="WELCOME TO HAWKINS">WELCOME TO HAWKINS</h1>
+        <p class="subtitle">A Quiet Town… Until The Gates Opened.</p>
+        <button class="enter-btn" onclick="scrollToUpsideDown()">ENTER THE UPSIDE DOWN</button>
+    </div>
+
+    <!-- UPSIDE DOWN TRANSITION SECTION -->
+    <div id="upside" class="section upside-bg">
+        <h2 class="section-title glitch-sm" data-text="THE UPSIDE DOWN">THE UPSIDE DOWN</h2>
+        <p class="story-text">
+            The lights flicker… the ground trembles… the air turns cold.
+            You have crossed into the **Upside Down** — a twisted mirror of Hawkins.
+            Everything is darker. Everything is alive. Everything is watching.
+        </p>
+        <button class="enter-btn red-btn" onclick="scrollToCharacters()">MEET THE CHARACTERS</button>
+    </div>
+
+    <!-- CHARACTER SECTION -->
+    <div id="characters" class="section characters-bg">
+        <h2 class="section-title">HEROES OF HAWKINS</h2>
+        <div class="card-grid">
+
+            <div class="character-card">
+                <img src="/static/eleven.jpg" class="char-img" />
+                <h3>Eleven</h3>
+                <p>The telekinetic girl who can open — and close — the Gate.</p>
+                <button class="power-btn" onclick="showPower('Eleven unleashes telekinesis! Lights explode!')">Use Power</button>
+            </div>
+
+            <div class="character-card">
+                <img src="/static/steve.jpg" class="char-img" />
+                <h3>Steve Harrington</h3>
+                <p>The babysitter turned warrior. Bat-swinging protector of Hawkins.</p>
+                <button class="power-btn" onclick="showPower('Steve swings the nail bat with heroic speed!')">Use Power</button>
+            </div>
+
+            <div class="character-card">
+                <img src="/static/nancy.jpg" class="char-img" />
+                <h3>Nancy Wheeler</h3>
+                <p>The fearless investigator. Brave, focused, unstoppable.</p>
+                <button class="power-btn" onclick="showPower('Nancy enters detective mode — target locked!')">Use Power</button>
+            </div>
+
+            <div class="character-card">
+                <img src="/static/dustin.jpg" class="char-img" />
+                <h3>Dustin Henderson</h3>
+                <p>The genius of the group. Radios, gadgets, and pure chaos energy.</p>
+                <button class="power-btn" onclick="showPower('Dustin hacks comms — the Upside Down frequency detected!')">Use Power</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FINAL STORY SECTION -->
+    <div id="final" class="section final-bg">
+        <h2 class="section-title">YOUR JOURNEY BEGINS…</h2>
+        <p class="story-text">
+            Hawkins needs you. The Gates grow stronger. Vecna stirs in the shadows.
+            Whether you are a fighter, a thinker, or something else entirely…
+            the next chapter of this story is yours.
+        </p>
+    </div>
+
+    <script>
+        function scrollToUpsideDown() {
+            document.getElementById('upside').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToCharacters() {
+            document.getElementById('characters').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showPower(text) {
+            alert(text);
+        }
+    </script>
+</body>
+</html>
