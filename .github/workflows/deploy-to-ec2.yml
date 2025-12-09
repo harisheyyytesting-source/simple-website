@@ -22,6 +22,18 @@ jobs:
             echo ${{github.event.workflow_run.conclusion}}
             echo ${{github.event.workflow_run.status}}
             echo ${{github.event.workflow_run.event}}
+     
+     - name: Testing Github conclusion
+       if: ${{github.event.workflow_run.conclusion == 'success' }}
+       run: echo Successfully Passed Bro
+
+     - name: Testing Github conclusion Failure
+       if: ${{github.event.workflow_run.conclusion == 'failure' }}
+       run: echo Successfully Failed Bro
+
+     - name: Testing Github conclusion Cancelled
+       if: ${{github.event.workflow_run.conclusion == 'cancelled' }}
+       run: echo Successfully Canceled Bro
             
 
      - name: echo "Getting code from Local Repo to Actions Work Space"
@@ -35,6 +47,7 @@ jobs:
    
      - name: Setup the Ec2 Instance
        uses: appleboy/scp-action@v0.1.4
+       if: ${{github.event.workflow_run.conclusion == 'success' }}
        with:
          host: ${{secrets.EC2_HOST}}
          username: ubuntu
