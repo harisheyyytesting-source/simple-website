@@ -1,7 +1,9 @@
 name: Continous Integration testing
 on:
-  push:
-
+  push: 
+    branches:
+      main
+      
 jobs:
   testing-ci:
      runs-on: ubuntu-latest
