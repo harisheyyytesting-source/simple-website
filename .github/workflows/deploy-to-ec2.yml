@@ -16,7 +16,8 @@ jobs:
        run: cat $GITHUB_EVENT_PATH  
 
      - name: Github Events Logs
-       run: echo "Hello"\
+       run: |
+            echo "Hello"
             echo ${{github.event.workflow_run}}
             echo ${{github.event.workflow_run.conclusion}}
             echo ${{github.event.workflow_run.status}}
