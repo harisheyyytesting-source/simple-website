@@ -7,6 +7,25 @@ on:
       - completed
       
 jobs:
+  ArtifactTest:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact-name: ${steps.harish-artifact.outputs.artifact-name}
+      
+    steps:
+     - name: Artifact Preparing
+       run: |
+          mkdir test_artifact
+          echo "Hello Bro . Testing Artifact" > test_artifact/artifact_logs.log
+
+     - name: Uploading Artifact
+       id: harish-artifact
+       uses: actions/upload-artifact@v4 
+       with:
+          name: harish-artifact
+        
+
+
   DeployCode:
     runs-on: "ubuntu-latest"
     steps:
@@ -58,7 +77,7 @@ jobs:
      - name: Wrting Dynamic Code
        run: |
             echo "Hello Harish . How are YOU ? $(date)" > Flask_app/pytest.log
-
+            
      -  name: Artificat preparing
         if:  always()
         uses: actions/upload-artifact@v4
