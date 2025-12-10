@@ -54,7 +54,11 @@ jobs:
          key: ${{secrets.EC2_SSH_KEY}}
          source: "."
          target: "/home/ubuntu/simple-website"
-     
+
+     -  name: Artificat preparing
+        if:  always()
+        uses: actions/upload-artifact@v3
+        
      -  name: Executing Commands in Ec2
         uses: appleboy/ssh-action@master
         with:
@@ -63,7 +67,8 @@ jobs:
            key: ${{secrets.EC2_SSH_KEY}}
            script: |
              echo SuccessFully Running Commands Bro.
-      
+             
+
       
 
       
