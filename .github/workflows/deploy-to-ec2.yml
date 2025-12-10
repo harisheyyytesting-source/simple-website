@@ -57,7 +57,7 @@ jobs:
 
      - name: Wrting Dynamic Code
        run: |
-            echo "Hello Harish . How are YOU ? $(date)" > pytest.log
+            echo "Hello Harish . How are YOU ? $(date)" > Flask_app/pytest.log
 
      -  name: Artificat preparing
         if:  always()
