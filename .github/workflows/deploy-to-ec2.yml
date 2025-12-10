@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artificat Logs
-          path: ./**/pytest.log
+          path: Flask_app/pytest.log
         
         
      -  name: Executing Commands in Ec2
