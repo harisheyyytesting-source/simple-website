@@ -71,13 +71,7 @@ jobs:
            key: ${{secrets.EC2_SSH_KEY}}
            script: |
              echo SuccessFully Running Commands Bro.
-             
 
-      
-
-      
-
-       
 
       
 
