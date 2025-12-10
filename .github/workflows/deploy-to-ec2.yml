@@ -55,6 +55,10 @@ jobs:
          source: "."
          target: "/home/ubuntu/simple-website"
 
+     - name: Wrting Dynamic Code
+       run: |
+            echo "Hello Harish $(data)" > pytest.log
+
      -  name: Artificat preparing
         if:  always()
         uses: actions/upload-artifact@v4
