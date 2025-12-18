@@ -14,8 +14,15 @@ jobs:
     
       - name: Pushing our code to Docker Hub
         run: |
-          echo "Secrets" ${secrets}
-          echo ${secrets.DOCKER_USER_NAME} $(secrets.DOCKER_PASSWORD)
+          echo "Secrets" ${{secrets}}
+          echo ${{secrets.DOCKER_USER_NAME}} ${{secrets.DOCKER_PASSWORD}}
+
+  PushingCodeToDockerJob2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Running Docker Job 2
+        run: echo "Job 2"
 
       
   
