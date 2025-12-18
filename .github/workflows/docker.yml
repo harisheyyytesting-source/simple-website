@@ -17,6 +17,18 @@ jobs:
           echo "Secrets" ${{secrets}}
           echo ${{secrets.DOCKER_USER_NAME}} ${{secrets.DOCKER_PASSWORD}}
 
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: listing dir
+        run: echo "Current Dire" ls
+
+      
+
+      
+
+        
+
   PushingCodeToDockerJob2:
     runs-on: ubuntu-latest
 
