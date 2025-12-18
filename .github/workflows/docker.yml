@@ -20,8 +20,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: listing dir
-        run: echo "Current Dire" ls
+      - name: Exploring Host Machine
+        run: |
+          echo 'Current Dir'
+          pwd
+          echo 'Home'
+          cd /
+          ls -la 
+          
+          
 
       
 
