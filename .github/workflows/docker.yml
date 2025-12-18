@@ -1,0 +1,21 @@
+name: Pushing to Docker Hub
+
+on: 
+  push:
+    branches: main
+
+jobs:
+  PushingCodeToDocker:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Hello Docker
+        run: echo "Hello Docker"
+    
+      - name: Pushing our code to Docker Hub
+        run: |
+          echo "Secrets" ${secrets}
+          echo ${secrets.DOCKER_USER_NAME} $(secrets.DOCKER_PASSWORD)
+
+      
+  
