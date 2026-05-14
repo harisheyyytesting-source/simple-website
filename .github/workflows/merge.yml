@@ -1,0 +1,42 @@
+name: PR Checks
+
+on:
+  pull_request: 
+    branches: 
+      - main  
+      - master
+
+
+jobs:
+  test_before_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+  
+      - name: Process Started
+        run: echo "Testing Process Started"
+    
+      - name: Checkout our branch
+        uses: actions/checkout@v4
+
+      - name: Checkout Python
+        uses: actions/setup-python@v5
+        with:
+           python-version: "3.11"
+
+      - name: Install dependecies
+        run: | 
+          pip install flask
+
+      - name: Testing Phase
+        run: |
+          pip install flake8
+          flake .
+        
+        
+        
+
+          
+
+  
+    
