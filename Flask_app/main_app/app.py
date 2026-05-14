@@ -3,6 +3,7 @@ from flask import Flask, render_template
 
 
 print('Started')
+a,b=10,20
 app = Flask(__name__)
 # redis_obj = redis.Redis(host='redis', port=6379)
 
