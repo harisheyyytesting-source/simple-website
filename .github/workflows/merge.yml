@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependecies
         run: | 
-          pip install flask reviewdog
+          pip install flask 
 
       - name: Testing Phase
         run: |
