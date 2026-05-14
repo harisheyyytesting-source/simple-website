@@ -24,6 +24,20 @@ def story():
 def portal():
     return render_template('portal.html')
 
+@app.route("/user")
+def user():
+
+    user_input = request.args.get("id")
+
+    conn = sqlite3.connect("test.db")
+    cursor = conn.cursor()
+
+    query = "SELECT * FROM users WHERE id=" + user_input
+
+    cursor.execute(query)
+
+    return "done"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
