@@ -5,7 +5,12 @@ on:
     branches: 
       - main  
       - master
-
+      
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  issues: write
 
 jobs:
   test_before_merge:
