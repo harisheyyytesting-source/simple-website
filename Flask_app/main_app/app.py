@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 # import redis
-
+query = "SELECT * FROM users WHERE id=" + user_input
+password="admin123"
 
 print('Started')
 a,b=10,20
