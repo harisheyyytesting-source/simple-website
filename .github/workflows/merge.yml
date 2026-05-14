@@ -12,14 +12,15 @@ permissions:
   checks: write
   issues: write
 
-strategy:
-  fail-fast:  true
-  matrix:
-    language: ['python']
 
 jobs:
   test_before_merge:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast:  true
+      matrix:
+        language: ['python']
 
     steps:
   
