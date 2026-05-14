@@ -26,12 +26,20 @@ jobs:
 
       - name: Install dependecies
         run: | 
-          pip install flask
+          pip install flask reviewdog
 
       - name: Testing Phase
         run: |
           pip install flake8
           flake8 .  --format=github
+
+      - name: using ReviewDog
+        uses: action/reviewdog/action-flake8@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          reporter: github-pr-review
+          fail_on_error: true
+        
         
         
         
