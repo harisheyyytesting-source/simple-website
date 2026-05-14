@@ -31,7 +31,7 @@ jobs:
       - name: Testing Phase
         run: |
           pip install flake8
-          flake8 .  --format=github
+          # flake8 .  --format=github
 
       - name: using ReviewDog
         uses: reviewdog/action-flake8@v3
